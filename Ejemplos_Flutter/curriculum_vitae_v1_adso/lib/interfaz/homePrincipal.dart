@@ -1,3 +1,4 @@
+import 'package:curriculum_vitae_v1_adso/main.dart';
 import 'package:curriculum_vitae_v1_adso/perfilPersonal/perfilPersonal.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,9 +13,9 @@ class HomePrincipal extends StatefulWidget {
 class _HomePrincipalState extends State<HomePrincipal> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Obx(()=> Scaffold(
       appBar: AppBar(
-        title: Center(child: Text("Curriculum Vitae V2 - ADSO")),
+        title: Center(child: Text(miControlador.Titulo)),
         backgroundColor: Colors.orange,
         foregroundColor: Colors.white,
       ),
@@ -43,23 +44,26 @@ class _HomePrincipalState extends State<HomePrincipal> {
               leading: Icon(Icons.person),
               trailing: Icon(Icons.arrow_forward_ios),
               onTap: () {
+                miControlador.cambiarTitulo("Curriculum Vitae V2 - ADSO");
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text("Información personal"),
+              title: Text("Información Personal"),
               leading: Icon(Icons.home),
               trailing: Icon(Icons.arrow_forward_ios),
               onTap: () {
-                Navigator.pop(context);
+                // Navigator.pop(context);
+                miControlador.cambiarTitulo("Información personal");
                 Get.to(PerfilPersonal());
               },
             ),
             ListTile(
-              title: Text("Educación formal"),
+              title: Text("Educación Formal"),
               leading: Icon(Icons.school),
               trailing: Icon(Icons.arrow_forward_ios),
               onTap: () {
+                miControlador.cambiarTitulo("Educación Formal");
                 Navigator.pop(context);
                 Get.defaultDialog(
                   title: "Alert",
@@ -78,6 +82,7 @@ class _HomePrincipalState extends State<HomePrincipal> {
               leading: Icon(Icons.book),
               trailing: Icon(Icons.arrow_forward_ios),
               onTap: () {
+                miControlador.cambiarTitulo("Educación continuada");
                 Navigator.pop(context);
                 Get.snackbar(
                   "Atención!", "Esta sección aún no está disponible",
@@ -92,6 +97,7 @@ class _HomePrincipalState extends State<HomePrincipal> {
               leading: Icon(Icons.newspaper),
               trailing: Icon(Icons.arrow_forward_ios),
               onTap: () {
+                miControlador.cambiarTitulo("Publicaciones"); // Estamos llamando al metodo cambiar titulo
                 Navigator.pop(context);
               },
             ),
@@ -100,6 +106,7 @@ class _HomePrincipalState extends State<HomePrincipal> {
               leading: Icon(Icons.work_outlined),
               trailing: Icon(Icons.arrow_forward_ios),
               onTap: () {
+                miControlador.cambiarTitulo("Experiencia Laboral");
                 Navigator.pop(context);
               },
             ),
@@ -108,6 +115,7 @@ class _HomePrincipalState extends State<HomePrincipal> {
               leading: Icon(Icons.people),
               trailing: Icon(Icons.arrow_forward_ios),
               onTap: () {
+                miControlador.cambiarTitulo("Referencias");
                 Navigator.pop(context);
               },
             ),
@@ -116,12 +124,13 @@ class _HomePrincipalState extends State<HomePrincipal> {
               leading: Icon(Icons.people),
               trailing: Icon(Icons.arrow_forward_ios),
               onTap: () {
+                miControlador.cambiarTitulo("Acerca de");
                 Navigator.pop(context);
               },
             ),
           ],
         ),
       ),
-    );
+    ));
   }
 }
