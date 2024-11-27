@@ -1,3 +1,4 @@
+import 'package:curriculum_vitae_v1_adso/experienciaLaboral/principalExperienciaLaboral.dart';
 import 'package:curriculum_vitae_v1_adso/main.dart';
 import 'package:curriculum_vitae_v1_adso/perfilPersonal/perfilPersonal.dart';
 import 'package:flutter/material.dart';
@@ -108,6 +109,7 @@ class _HomePrincipalState extends State<HomePrincipal> {
               onTap: () {
                 miControlador.cambiarTitulo("Experiencia Laboral");
                 Navigator.pop(context);
+                Get.to(PrincipalExperienciaLaboral());
               },
             ),
             ListTile(
@@ -134,3 +136,12 @@ class _HomePrincipalState extends State<HomePrincipal> {
     ));
   }
 }
+
+
+// Consultas chatGPT:
+// Genera un list map en flutter con 10 registros que representen la experiencia de  un desarrollador que 
+// contenga, id, titulo, fechaInicio, fechaFin y funciones (uno o dos parrafos), categoria
+
+// A esta misma lista genera otro campo con el color de la categoria, los colores de la misma categoría deben 
+// ser iguales. Genera con la Colors, ejemplo: Colors.blue 
+
