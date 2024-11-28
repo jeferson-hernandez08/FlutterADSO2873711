@@ -3,6 +3,7 @@ import 'package:curriculum_vitae_v1_adso/main.dart';
 import 'package:curriculum_vitae_v1_adso/perfilPersonal/perfilPersonal.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../utils/utils.dart';
 
 class HomePrincipal extends StatefulWidget {
   const HomePrincipal({super.key});
@@ -17,8 +18,8 @@ class _HomePrincipalState extends State<HomePrincipal> {
     return Obx(()=> Scaffold(
       appBar: AppBar(
         title: Center(child: Text(miControlador.Titulo)),
-        backgroundColor: Colors.orange,
-        foregroundColor: Colors.white,
+        backgroundColor: Utils.primaryColor,
+        foregroundColor: Utils.foregroundColor,
       ),
       body:Center(
         child: Image(image: NetworkImage("assets/images/logo_playvox.png")),
@@ -37,7 +38,7 @@ class _HomePrincipalState extends State<HomePrincipal> {
               ),
             ),
             Divider(
-              color:  Colors.orange, 
+              color:  Utils.primaryColor, 
               height: 2,
               ),
             ListTile(
