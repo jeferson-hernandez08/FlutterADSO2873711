@@ -1,4 +1,5 @@
 import 'package:curriculum_vitae_v1_adso/data/experienciaData.dart';
+import 'package:curriculum_vitae_v1_adso/experienciaLaboral/viewExperienciaLaboral.dart';
 import 'package:curriculum_vitae_v1_adso/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -38,6 +39,18 @@ class _PrincipalExperienciaLaboralState extends State<PrincipalExperienciaLabora
               title: Text(miControlador.ListaExperienciaLaboral[index]["titulo"]),
               subtitle: Text(miControlador.ListaExperienciaLaboral[index]["categoria"]),
               leading: Text(miControlador.ListaExperienciaLaboral[index]["fechaInicio"]),
+              trailing: 
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      IconButton(onPressed: (){
+                        // Lógica para visualizar el detalle de una experiencia laboral.
+                        Get.to(ViewExperienciaLaboral());    //********AQUI QUEDE ****** */
+                      } , icon: Icon(Icons.search)),
+                      IconButton(onPressed: (){} , icon: Icon(Icons.edit)),
+                      IconButton(onPressed: (){} , icon: Icon(Icons.delete)),
+                    ],
+                  ),
             ),
           );
         },
