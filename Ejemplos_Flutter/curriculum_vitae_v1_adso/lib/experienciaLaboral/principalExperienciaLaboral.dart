@@ -31,24 +31,28 @@ class _PrincipalExperienciaLaboralState extends State<PrincipalExperienciaLabora
           showModalAddEditExperiencia(context);  // El contexto es toda la organizacion del arbol de widget de manera gerarquica
                                                 // Donde podemos visualizar cada uno de los elementos que tenemos. 
       }),
-      body: ListView.builder(
+      body: ListView.builder(      // Este elemento es un ciclo que nos permite listar todos los elementos a ttarves de tarjeta. 
         itemCount: miControlador.ListaExperienciaLaboral.length,  
         itemBuilder:(BuildContext context, int index) {
           return Card(
             child: ListTile(
-              title: Text(miControlador.ListaExperienciaLaboral[index]["titulo"]),
+              title: Text(miControlador.ListaExperienciaLaboral[index]["titulo"]),    // Lista donde tenemos los diferentes elementos.
               subtitle: Text(miControlador.ListaExperienciaLaboral[index]["categoria"]),
               leading: Text(miControlador.ListaExperienciaLaboral[index]["fechaInicio"]),
               trailing: 
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      IconButton(onPressed: (){
+                      IconButton(
+                        onPressed: (){
                         // Lógica para visualizar el detalle de una experiencia laboral.
-                        Get.to(ViewExperienciaLaboral());    //********AQUI QUEDE ****** */
-                      } , icon: Icon(Icons.search)),
+                          viewEsperienciaLaboral(context, miControlador.ListaExperienciaLaboral[index]);  // Le mandamos el context y recordemos que el context representa el arbol de widget de toda la aplicacion 
+                        } , 
+                        icon: Icon(Icons.search)),
                       IconButton(onPressed: (){} , icon: Icon(Icons.edit)),
-                      IconButton(onPressed: (){} , icon: Icon(Icons.delete)),
+                      IconButton(onPressed: (){
+                        // Lógica para eliminar
+                      } , icon: Icon(Icons.delete)),
                     ],
                   ),
             ),

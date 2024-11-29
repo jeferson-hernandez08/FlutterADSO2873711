@@ -1,17 +1,11 @@
+import 'package:curriculum_vitae_v1_adso/experienciaLaboral/addEditExperienciaLaboral.dart';
 import 'package:flutter/material.dart';
-
 import '../utils/utils.dart';
 
-class ViewExperienciaLaboral extends StatefulWidget {
-  const ViewExperienciaLaboral({super.key});
-
-  @override
-  State<ViewExperienciaLaboral> createState() => _ViewExperienciaLaboralState();
-}
-
-class _ViewExperienciaLaboralState extends State<ViewExperienciaLaboral> {
-  @override
-  Widget build(BuildContext context) {
+viewEsperienciaLaboral(context, elementoActual) {
+  showModalBottomSheet(context: context, 
+  isScrollControlled: true,              // Esta propiedad nos permite visualizar de forma pequeña o grande (true o false)l elemento.
+  builder: (context){
     return Scaffold(
       appBar: AppBar(
         title: Text("Visualizar experiencia laboral"),
@@ -21,28 +15,44 @@ class _ViewExperienciaLaboralState extends State<ViewExperienciaLaboral> {
       body: ListView(
         children: [
           ListTile(
-            leading: Text("Id: 10"),
-            title: Text('Desarrollador Android'),
-            subtitle: Text("2013-08-01 / 2024-11-26"),
+            iconColor: elementoActual["colorCategoria"],
+            leading: Icon(Icons.category),
+            title: Text(elementoActual["categoria"]),
+            subtitle: Text("Categoría"),
           ),
           ListTile(
-            leading: Text("Id: 10"),
-            title: Text("2013-08-01 / 2024-11-26"),
-            subtitle: Text("Periodo trabajado"),
+            iconColor: elementoActual["colorCategoria"],
+            leading: Icon(Icons.group_work),
+            title: Text(elementoActual["titulo"]),
+            subtitle: Text("Cargo"),
           ),
           ListTile(
+            iconColor: elementoActual["colorCategoria"],
+            leading: Icon(Icons.work_history),
+            title: Text(elementoActual["fechaInicio"]),    
+            subtitle: Text("Fecha Inicio"),
+          ),
+          ListTile(
+            iconColor: elementoActual["colorCategoria"],
+            leading: Icon(Icons.work_history_outlined),
+            title: Text(elementoActual["fechaFin"]),    
+            subtitle: Text("Fecha Fin"),
+          ),
+          ListTile(
+            iconColor: elementoActual["colorCategoria"],
             leading: Icon(Icons.work),
-            title: Text('Desarrollo de aplicaciones móviles nativas para Android utilizando Java y Kotlin. Integración de servicios web y optimización del rendimiento de las aplicaciones en dispositivos móviles.') ,
+            title: Text(elementoActual["funciones"]) ,
             subtitle: Text("Funciones"),
-          ),
-          ListTile(
-            iconColor: Colors.amber,
-            leading: Icon(Icons.work),
-            title: Text('FullStack'),
-            subtitle: Text("Categoria"),
           ),
         ],
       ),
     );
-  }
+
+  });
 }
+
+
+
+
+
+    

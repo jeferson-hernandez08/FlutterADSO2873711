@@ -18,8 +18,9 @@ void limpiarCampos() {
   categoriaController.clear();
 }
 
-showModalAddEditExperiencia(context) {  // Cuando le presionemos el boton adicional le estamos diciendo que nos habra un modal
+showModalAddEditExperiencia(context) {   // Cuando le presionemos el boton adicional le estamos diciendo que nos habra un modal
   showModalBottomSheet(                 // Con la funcion showModalBottomSheet y aqui abriremos un Scaffold
+    isScrollControlled: false,          // Esta propiedad nos permite visualizar de forma pequeña o grande (true o false)l elemento. 
     context: context, 
     builder: (context) {
     return Scaffold(
