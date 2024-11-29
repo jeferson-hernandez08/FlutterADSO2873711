@@ -18,39 +18,53 @@ void limpiarCampos() {
   categoriaController.clear();
 }
 
-showModalAddEditExperiencia(context) {   // Cuando le presionemos el boton adicional le estamos diciendo que nos habra un modal
+showModalAddEditExperiencia(context, String opcionAddEdit, dynamic elementoActual) {   // Cuando le presionemos el boton adicional le estamos diciendo que nos habra un modal
+
+if (opcionAddEdit == "edit") {
+  tituloController.text = elementoActual["titulo"];
+  fechaInicioController.text = elementoActual["fechaInicio"];
+  fechaFinController.text = elementoActual["fechaFin"];
+  funcionesController.text = elementoActual["funciones"]; 
+  categoriaController.text = elementoActual["categoria"];     //Quede aquí ...min 25......
+}
+
   showModalBottomSheet(                 // Con la funcion showModalBottomSheet y aqui abriremos un Scaffold
     isScrollControlled: false,          // Esta propiedad nos permite visualizar de forma pequeña o grande (true o false)l elemento. 
     context: context, 
     builder: (context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Ingresar Experiencia"),
+        title: Text(opcionAddEdit=="new"?"Ingresar Experiencia":"Editar experiencia"),  // Si la opcionAddEdit es igual a "new" mostramos el texto "Ingresar experiencia" si NO ponemos el texto "Editar experiencia"
         backgroundColor: Utils.primaryColor,
         foregroundColor: Utils.foregroundColor,
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Utils.primaryColor,
         foregroundColor: Utils.foregroundColor,
-        child: Icon(Icons.save),
+        child: opcionAddEdit=="new"?Icon(Icons.save):Icon(Icons.edit),
         onPressed: () {
           // Se ejecuta cuando se guarda un elemento de experiencia
-          Map<String,dynamic> newItem = {
-            // 'id': 10,
-            'titulo': tituloController.text,
-            'fechaInicio': fechaInicioController.text,
-            'fechaFin': fechaFinController.text,
-            'funciones': funcionesController.text,
-            'categoria': categoriaController.text,
-            'colorCategoria': Colors.blue, // Color para la categoría 'Móvil'
-          };
-          miControlador.addItemListaExperienciaLaboral(newItem);  // Llamamos la funcion addItemListaExperienciaLaboral de myController
-          Get.back();
-          limpiarCampos();     // Llamamos al metodo limpiarCampos para limpiar los campos.
-          Get.snackbar("Atencion", "Experiencia agregada con éxito", 
-              backgroundColor: Colors.green[300],
-              colorText: Colors.white
-          );
+          if (opcionAddEdit == "new") {
+            Map<String,dynamic> newItem = {
+              // 'id': 10,
+              'titulo': tituloController.text,
+              'fechaInicio': fechaInicioController.text,
+              'fechaFin': fechaFinController.text,
+              'funciones': funcionesController.text,
+              'categoria': categoriaController.text,
+              'colorCategoria': Colors.blue, // Color para la categoría 'Móvil'
+            };
+            miControlador.addItemListaExperienciaLaboral(newItem);  // Llamamos la funcion addItemListaExperienciaLaboral de myController
+            Get.back();
+            limpiarCampos();     // Llamamos al metodo limpiarCampos para limpiar los campos.
+            Get.snackbar("Atencion", "Experiencia agregada con éxito", 
+                backgroundColor: Colors.green[300],
+                colorText: Colors.white
+            );
+          } else {
+            // Lógica para editar registro
+            
+          }
       }),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

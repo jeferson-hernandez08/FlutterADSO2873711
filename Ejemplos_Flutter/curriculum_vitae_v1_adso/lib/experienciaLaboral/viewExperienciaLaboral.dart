@@ -2,8 +2,8 @@ import 'package:curriculum_vitae_v1_adso/experienciaLaboral/addEditExperienciaLa
 import 'package:flutter/material.dart';
 import '../utils/utils.dart';
 
-viewEsperienciaLaboral(context, elementoActual) {
-  showModalBottomSheet(context: context, 
+viewEsperienciaLaboral(BuildContext context, Map elementoActual) {   // Recibe dos parametros: BuildContext context y elementoActual que es el map experiencia data. 
+  showModalBottomSheet(context: context,                             // Es buena practica asignar el tipo de dato que vamos a recibir. 
   isScrollControlled: true,              // Esta propiedad nos permite visualizar de forma pequeña o grande (true o false)l elemento.
   builder: (context){
     return Scaffold(

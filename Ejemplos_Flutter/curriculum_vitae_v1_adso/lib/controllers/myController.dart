@@ -18,6 +18,10 @@ class Mycontroller extends GetxController {
 
   }
 
+  void removeItemListaExpericienciaLaboral(int index) {      // Recibe un entero index
+    _listaExperienciaLaboral.removeAt(index);                 // Esta list tiene un metodo llamdo remove para que remove nos remueve un elemento. 
+  }                                                        // Borramos el elemento de esa posicion, recordemos que una lista reactiva en el momento que los removamos tambien se remueve de la aprte grafica. 
+
   String get Titulo => _titulo.value; 
   List get ListaExperienciaLaboral => _listaExperienciaLaboral.value;                                                                                                                                                                                                                           
   
