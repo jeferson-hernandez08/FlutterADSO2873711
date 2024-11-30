@@ -92,3 +92,14 @@ List<Map<String, dynamic>> listaExperienciaDesarrollador = [
     'colorCategoria': Colors.blue, // Color para la categoría 'Móvil'
   },
 ];
+
+// Lo que estamos haciendo aqui es la simulacion a acceder a una base de datos o estar consultandom o consumiendo
+// una API directamente. La proxima evolucion es que esta aplicacion es que nos conecte a una API nosotros tengamos
+// desarrollada en un lenguaje de programacion del aldo de backend
+
+// Consulta GPT Clase Profe Julian:
+// genera un list map en flutter con 10 registros que representen la experiencia de un desarrollador 
+// que contenga, id, titulo, fechaInicio, fechaFin y funciones (uno o dos parrafos), categoria
+//*****/
+// a esta misma lista genera otro campo con el color de la categoria, los colores de la misma categoría
+// deben ser iguales. Genera con la Colors, ejemplo: Colors.blue

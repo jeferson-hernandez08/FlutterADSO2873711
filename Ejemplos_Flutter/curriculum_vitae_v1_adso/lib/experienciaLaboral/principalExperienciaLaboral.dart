@@ -29,7 +29,7 @@ class _PrincipalExperienciaLaboralState extends State<PrincipalExperienciaLabora
         child: Icon(Icons.add),
         onPressed: (){
           // Lógica para agregar una experiencia
-          showModalAddEditExperiencia(context, "new", null);    // El contexto es toda la organizacion del arbol de widget de manera gerarquica
+          showModalAddEditExperiencia(context, "new", null, null);    // El contexto es toda la organizacion del arbol de widget de manera gerarquica
                                                          // Donde podemos visualizar cada uno de los elementos que tenemos. 
       }),
       body: ListView.builder(      // Este elemento es un ciclo que nos permite listar todos los elementos a ttarves de tarjeta. 
@@ -52,7 +52,7 @@ class _PrincipalExperienciaLaboralState extends State<PrincipalExperienciaLabora
                         icon: Icon(Icons.search)),
                       IconButton(onPressed: (){
                         // Lógica para editar una experiencia laboral
-                        showModalAddEditExperiencia(context, "edit", miControlador.ListaExperienciaLaboral[index]);
+                        showModalAddEditExperiencia(context, "edit", miControlador.ListaExperienciaLaboral[index], index);
                       } , icon: Icon(Icons.edit)),
                       IconButton(
                         onPressed: (){

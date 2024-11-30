@@ -18,14 +18,15 @@ void limpiarCampos() {
   categoriaController.clear();
 }
 
-showModalAddEditExperiencia(context, String opcionAddEdit, dynamic elementoActual) {   // Cuando le presionemos el boton adicional le estamos diciendo que nos habra un modal
+showModalAddEditExperiencia(context, String opcionAddEdit, dynamic elementoActual, dynamic index) {   // Cuando le presionemos el boton adicional le estamos diciendo que nos habra un modal
 
+limpiarCampos();
 if (opcionAddEdit == "edit") {
   tituloController.text = elementoActual["titulo"];
   fechaInicioController.text = elementoActual["fechaInicio"];
   fechaFinController.text = elementoActual["fechaFin"];
   funcionesController.text = elementoActual["funciones"]; 
-  categoriaController.text = elementoActual["categoria"];     //Quede aquí ...min 25......
+  categoriaController.text = elementoActual["categoria"];     
 }
 
   showModalBottomSheet(                 // Con la funcion showModalBottomSheet y aqui abriremos un Scaffold
@@ -55,14 +56,30 @@ if (opcionAddEdit == "edit") {
               'colorCategoria': Colors.blue, // Color para la categoría 'Móvil'
             };
             miControlador.addItemListaExperienciaLaboral(newItem);  // Llamamos la funcion addItemListaExperienciaLaboral de myController
-            Get.back();
+            Get.back();           // Cerrar
             limpiarCampos();     // Llamamos al metodo limpiarCampos para limpiar los campos.
-            Get.snackbar("Atencion", "Experiencia agregada con éxito", 
+            Get.snackbar("Atencion", "Experiencia agregada con éxito",    // Mostrar mensaje
                 backgroundColor: Colors.green[300],
                 colorText: Colors.white
             );
           } else {
-            // Lógica para editar registro
+            // Lógica para editar un registro de experiencia
+            // Basicamente creamos un nuevo mapa con clave String('titulo', etc.) y valores dynamico(tituloController.text, etc.)
+            Map<String,dynamic> elementEdit =  {    // Gereramos un elemento que se va a editar que es de tipo map lo ucal lo mandamos en el  miControlador.editItemListaExperienciaLaboral
+              'titulo': tituloController.text,
+              'fechaInicio': fechaInicioController.text,
+              'fechaFin': fechaFinController.text,
+              'funciones': funcionesController.text,
+              'categoria': categoriaController.text,
+              'colorCategoria': Colors.blue, // Color para la categoría 'Móvil'
+            };
+            miControlador.editItemListaExperienciaLaboral(index, elementEdit);
+            Get.back();           // Cerrar
+            limpiarCampos();     // Llamamos al metodo limpiarCampos para limpiar los campos.
+            Get.snackbar("Atencion", "Experiencia editada con éxito",    // Mostrar mensaje
+                backgroundColor: Colors.green[300],
+                colorText: Colors.white
+            );
             
           }
       }),
