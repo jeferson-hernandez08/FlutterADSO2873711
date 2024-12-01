@@ -34,9 +34,9 @@ class _PrincipalEducacionFormalState extends State<PrincipalEducacionFormal> {
         itemBuilder:(BuildContext context, int index) {
           return Card(
             child: ListTile(
-              title: Text(miControlador.ListaExperienciaLaboral[index]["titulo"]),         // Lista donde tenemos los diferentes elementos.
-              subtitle: Text(miControlador.ListaExperienciaLaboral[index]["categoria"]),  // Accedemos a la lista experiencia laboral en la posicion index
-              leading: Text(miControlador.ListaExperienciaLaboral[index]["fechaInicio"]),
+              title: Text(miControlador.ListaEducacionFormal[index]["titulo"]),            // Lista donde tenemos los diferentes elementos.
+              subtitle: Text(miControlador.ListaEducacionFormal[index]["tipoEstudio"]),   // Accedemos a la lista educacion formal en la posicion index
+              leading: Text(miControlador.ListaEducacionFormal[index]["anioFinalizacion"]),  // ****AQUI QUEDE YA ESTOY CONSUMIENDO LOS DATOS EN EL MENU****
               trailing: 
                   Row(
                     mainAxisSize: MainAxisSize.min,

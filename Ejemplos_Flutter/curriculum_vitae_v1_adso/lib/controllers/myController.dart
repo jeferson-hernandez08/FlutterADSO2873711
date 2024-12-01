@@ -4,8 +4,9 @@ import 'package:get/get.dart';
 
 class Mycontroller extends GetxController {
   final _titulo = "Curriculum Vitae V2 - ADSO".obs;              // Definimos una variable tipo String con un observable 
-  final _listaExperienciaLaboral = [].obs;                       // para verificar cambios dentro de la aplicación y poder impactar o actualizar algún  widget o componente 
-                                                                 // en nuestra app. 
+  final _listaExperienciaLaboral = [].obs;                       // para verificar cambios dentro de la aplicación y poder impactar o actualizar algún  widget o componente en nuestra app.
+  final _listaEducacionFormal    = [].obs;
+                                                                 
   void cambiarTitulo(String item) {
     _titulo.value = item;
   }
@@ -27,6 +28,13 @@ class Mycontroller extends GetxController {
   }
 
   String get Titulo => _titulo.value; 
-  List get ListaExperienciaLaboral => _listaExperienciaLaboral.value;                                                                                                                                                                                                                           
+  List get ListaExperienciaLaboral => _listaExperienciaLaboral.value;     
+
+  // Metodos Educación Formal 
+  void cambiarListaEducacionFormal(List item) {     // Con este metodo cambiaListaEducacionFormal tomamos la lista listaformacionAcademica como parametro o argumento
+    _listaEducacionFormal.value = item;            // List item es la lista de datos que recibe y contiene la lista listaformacionAcademica
+  }                                               // Luego se le asigna el valor de item (que es la lista de listaformacionAcademica ) a _listaExperienciaLaboral.value
+
+  List get ListaEducacionFormal => _listaEducacionFormal.value;                                                                                                                                                                                                          
   
 }

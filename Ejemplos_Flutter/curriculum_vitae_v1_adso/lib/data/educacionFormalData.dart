@@ -1,73 +1,73 @@
 import 'package:flutter/material.dart';
 
-List<Map<String, dynamic>> formacionAcademicaLista = [
+List<Map<String, dynamic>> listaformacionAcademica = [
   {
     'id': 1,
     'titulo': 'Ingeniería en Sistemas',
-    'anioFinalizacion': 2023,
+    'anioFinalizacion': '2023',
     'tipoEstudio': 'Pregrado',
     'color': Colors.blue, // Azul para Pregrado
   },
   {
     'id': 2,
     'titulo': 'Licenciatura en Informática',
-    'anioFinalizacion': 2022,
+    'anioFinalizacion': '2022',
     'tipoEstudio': 'Pregrado',
     'color': Colors.blue, // Azul para Pregrado
   },
   {
     'id': 3,
     'titulo': 'Análisis y Desarrollo de Software',
-    'anioFinalizacion': 2024,
+    'anioFinalizacion': '2024',
     'tipoEstudio': 'Técnico',
     'color': Colors.green, // Verde para Técnico
   },
   {
     'id': 4,
     'titulo': 'Ciencia de Datos',
-    'anioFinalizacion': 2025,
+    'anioFinalizacion': '2025',
     'tipoEstudio': 'Posgrado',
     'color': Colors.orange, // Naranja para Posgrado
   },
   {
     'id': 5,
     'titulo': 'Máster en Inteligencia Artificial',
-    'anioFinalizacion': 2026,
+    'anioFinalizacion': '2026',
     'tipoEstudio': 'Maestría',
     'color': Colors.purple, // Púrpura para Maestría
   },
   {
     'id': 6,
     'titulo': 'Ingeniería en Computación',
-    'anioFinalizacion': 2023,
+    'anioFinalizacion': '2023',
     'tipoEstudio': 'Pregrado',
     'color': Colors.blue, // Azul para Pregrado
   },
   {
     'id': 7,
     'titulo': 'Diplomado en Desarrollo de Aplicaciones Móviles',
-    'anioFinalizacion': 2023,
+    'anioFinalizacion': '2023',
     'tipoEstudio': 'Técnico',
     'color': Colors.green, // Verde para Técnico
   },
   {
     'id': 8,
     'titulo': 'Máster en Big Data y Análisis de Datos',
-    'anioFinalizacion': 2025,
+    'anioFinalizacion': '2025',
     'tipoEstudio': 'Maestría',
     'color': Colors.purple, // Púrpura para Maestría
   },
   {
     'id': 9,
     'titulo': 'Licenciatura en Ciencias de la Computación',
-    'anioFinalizacion': 2022,
+    'anioFinalizacion': '2022',
     'tipoEstudio': 'Pregrado',
     'color': Colors.blue, // Azul para Pregrado
   },
   {
     'id': 10,
     'titulo': 'Certificación en Desarrollo Web Full Stack',
-    'anioFinalizacion': 2023,
+    'anioFinalizacion': '2023',
     'tipoEstudio': 'Técnico',
     'color': Colors.green, // Verde para Técnico
   },
