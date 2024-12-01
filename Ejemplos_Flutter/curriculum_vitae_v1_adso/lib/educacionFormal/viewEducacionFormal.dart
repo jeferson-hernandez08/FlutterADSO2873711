@@ -31,12 +31,12 @@ viewEducacionFormal(BuildContext context, Map elementoActual) {       // Recibe 
               title: Text(elementoActual["anioFinalizacion"]),    
               subtitle: Text("Fecha Finalización"),
             ),
-            // ListTile(
-            //   iconColor: elementoActual["color"],
-            //   leading: Icon(Icons.work_history_outlined),
-            //   title: Text(elementoActual["fechaFin"]),    
-            //   subtitle: Text("Fecha Fin"),
-            // ),
+            ListTile(
+              iconColor: elementoActual["color"],
+              leading: Icon(Icons.business),
+              title: Text(elementoActual["institucion"]),    
+              subtitle: Text("Institución"),
+            ),
             // ListTile(
             //   iconColor: elementoActual["color"],
             //   leading: Icon(Icons.work),

@@ -6,6 +6,7 @@ List<Map<String, dynamic>> listaformacionAcademica = [
     'titulo': 'Ingeniería en Sistemas',
     'anioFinalizacion': '2023',
     'tipoEstudio': 'Pregrado',
+    'institucion' : 'Harvard University',
     'color': Colors.blue, // Azul para Pregrado
   },
   {
@@ -13,13 +14,15 @@ List<Map<String, dynamic>> listaformacionAcademica = [
     'titulo': 'Licenciatura en Informática',
     'anioFinalizacion': '2022',
     'tipoEstudio': 'Pregrado',
-    'color': Colors.blue, // Azul para Pregrado
+    'institucion' : 'Stanford University',
+    'color': Colors.red, // Azul para Pregrado
   },
   {
     'id': 3,
     'titulo': 'Análisis y Desarrollo de Software',
     'anioFinalizacion': '2024',
     'tipoEstudio': 'Técnico',
+    'institucion' : 'Massachusetts Institute of Technology (MIT)',
     'color': Colors.green, // Verde para Técnico
   },
   {
@@ -27,6 +30,7 @@ List<Map<String, dynamic>> listaformacionAcademica = [
     'titulo': 'Ciencia de Datos',
     'anioFinalizacion': '2025',
     'tipoEstudio': 'Posgrado',
+    'institucion' : 'University of California, Berkeley',
     'color': Colors.orange, // Naranja para Posgrado
   },
   {
@@ -34,6 +38,7 @@ List<Map<String, dynamic>> listaformacionAcademica = [
     'titulo': 'Máster en Inteligencia Artificial',
     'anioFinalizacion': '2026',
     'tipoEstudio': 'Maestría',
+    'institucion' : 'Princeton University',
     'color': Colors.purple, // Púrpura para Maestría
   },
   {
@@ -41,13 +46,15 @@ List<Map<String, dynamic>> listaformacionAcademica = [
     'titulo': 'Ingeniería en Computación',
     'anioFinalizacion': '2023',
     'tipoEstudio': 'Pregrado',
-    'color': Colors.blue, // Azul para Pregrado
+    'institucion' : 'Yale University',
+    'color': Colors.pink, // Azul para Pregrado
   },
   {
     'id': 7,
     'titulo': 'Diplomado en Desarrollo de Aplicaciones Móviles',
     'anioFinalizacion': '2023',
     'tipoEstudio': 'Técnico',
+    'institucion' : 'Columbia University',
     'color': Colors.green, // Verde para Técnico
   },
   {
@@ -55,6 +62,7 @@ List<Map<String, dynamic>> listaformacionAcademica = [
     'titulo': 'Máster en Big Data y Análisis de Datos',
     'anioFinalizacion': '2025',
     'tipoEstudio': 'Maestría',
+    'institucion' : 'University of Chicago',
     'color': Colors.purple, // Púrpura para Maestría
   },
   {
@@ -62,13 +70,15 @@ List<Map<String, dynamic>> listaformacionAcademica = [
     'titulo': 'Licenciatura en Ciencias de la Computación',
     'anioFinalizacion': '2022',
     'tipoEstudio': 'Pregrado',
-    'color': Colors.blue, // Azul para Pregrado
+    'institucion' : 'California Institute of Technology (Caltech)',
+    'color': Colors.yellow, // Azul para Pregrado
   },
   {
     'id': 10,
     'titulo': 'Certificación en Desarrollo Web Full Stack',
     'anioFinalizacion': '2023',
     'tipoEstudio': 'Técnico',
+    'institucion' : 'University of Pennsylvania',
     'color': Colors.green, // Verde para Técnico
   },
 ];
