@@ -1,3 +1,4 @@
+import 'package:curriculum_vitae_v1_adso/educacionFormal/viewEducacionFormal.dart';
 import 'package:curriculum_vitae_v1_adso/main.dart';    // Import Package de miControlador.
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';   // Import Package de Obx.
@@ -44,7 +45,7 @@ class _PrincipalEducacionFormalState extends State<PrincipalEducacionFormal> {
                       IconButton(
                         onPressed: (){
                         // Lógica para visualizar el detalle de una experiencia laboral.
-                          //**viewEsperienciaLaboral(context, miControlador.ListaExperienciaLaboral[index]);  // Le mandamos el context y recordemos que el context representa el arbol de widget de toda la aplicacion 
+                         viewEducacionFormal(context, miControlador.ListaEducacionFormal[index]);  // Le mandamos el context y recordemos que el context representa el arbol de widget de toda la aplicacion y le mandamos la ListaEducacionFormal
                         } , 
                         icon: Icon(Icons.search)),
                       IconButton(onPressed: (){
