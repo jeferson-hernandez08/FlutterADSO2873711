@@ -1,3 +1,4 @@
+import 'package:curriculum_vitae_v1_adso/educacionFormal/principalEducacionFormal.dart';
 import 'package:curriculum_vitae_v1_adso/experienciaLaboral/principalExperienciaLaboral.dart';
 import 'package:curriculum_vitae_v1_adso/main.dart';
 import 'package:curriculum_vitae_v1_adso/perfilPersonal/perfilPersonal.dart';
@@ -67,16 +68,17 @@ class _HomePrincipalState extends State<HomePrincipal> {
               onTap: () {
                 miControlador.cambiarTitulo("Educación Formal");
                 Navigator.pop(context);
-                Get.defaultDialog(
-                  title: "Alert",
-                  middleText: "Esta sección pronto será publicada ...",
-                  onConfirm: () {
+                // Get.defaultDialog(
+                //   title: "Alert",
+                //   middleText: "Esta sección pronto será publicada ...",
+                //   onConfirm: () {
 
-                  },
-                  onCancel: (){
+                //   },
+                //   onCancel: (){
 
-                  }
-                );
+                //   }
+                // );
+                Get.to(PrincipalEducacionFormal());   // Para llamar el metodo recordemos que debemos importar la carpeta hacia donde está este metodo. (import 'package:curriculum_vitae_v1_adso/educacionFormal/principalEducacionFormal.dart';)
               },
             ),
             ListTile(
