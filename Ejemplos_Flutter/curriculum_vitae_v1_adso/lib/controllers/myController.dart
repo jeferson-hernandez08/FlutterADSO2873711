@@ -8,12 +8,13 @@ class Mycontroller extends GetxController {
   final _listaExperienciaLaboral  = [].obs;                       
   final _listaEducacionFormal     = [].obs;
   final _listaFormacionContinuada = [].obs;
+  final _listaPublicaciones       = [].obs;
                                                                  
   void cambiarTitulo(String item) {
     _titulo.value = item;
   }
 
-  // Experiencia Laboral
+  // Metodos Experiencia Laboral
   void addItemListaExperienciaLaboral(Map<String,dynamic> item) {     // Los items son un mapa completo dentro de nuestra lista.
      _listaExperienciaLaboral.add(item);                              // En esta funcion le estamos enviando un map y ese mapa lo vamos a agregar a la lista recortando que tenemos una lista de mapas.
   }
@@ -22,9 +23,9 @@ class Mycontroller extends GetxController {
     _listaExperienciaLaboral.value  = item;
   }
 
-  void removeItemListaExpericienciaLaboral(int index) {      // Recibe un entero index
-    _listaExperienciaLaboral.removeAt(index);                 // Esta list tiene un metodo llamdo remove para que remove nos remueve un elemento. 
-  }                                                        // Borramos el elemento de esa posicion, recordemos que una lista reactiva en el momento que los removamos tambien se remueve de la aprte grafica. 
+  void removeItemListaExpericienciaLaboral(int index) {         // Recibe un entero index
+    _listaExperienciaLaboral.removeAt(index);                  // Esta list tiene un metodo llamdo remove para que remove nos remueve un elemento. 
+  }                                                           // Borramos el elemento de esa posicion, recordemos que una lista reactiva en el momento que los removamos tambien se remueve de la aprte grafica. 
 
   void editItemListaExperienciaLaboral(int index, Map itemEdit) {
      _listaExperienciaLaboral[index] = itemEdit;                    // La lista lista en esa posicion (index) que me estan enviando le asignamos ese nuevo elemento (itemEdit)
@@ -32,16 +33,16 @@ class Mycontroller extends GetxController {
 
 
   // Metodos Educación Formal 
-  void addItemListaEducacionFormal(Map<String,dynamic> item) {      // Los items son un mapa completo dentro de nuestra lista.
+  void addItemListaEducacionFormal(Map<String,dynamic> item) {       // Los items son un mapa completo dentro de nuestra lista.
     _listaEducacionFormal.add(item);                                // En esta funcion le estamos enviando un map y ese mapa lo vamos a agregar a la lista recortando que tenemos una lista de mapas.
   }                                                                // Este metodo es ára agregar los nuevos valores a la lista ListaEducacionFormal
 
-  void cambiarListaEducacionFormal(List item) {     // Con este metodo cambiaListaEducacionFormal tomamos la lista listaformacionAcademica como parametro o argumento
-    _listaEducacionFormal.value = item;            // List item es la lista de datos que recibe y contiene la lista listaformacionAcademica
-  }                                               // Luego se le asigna el valor de item (que es la lista de listaformacionAcademica ) a _listaExperienciaLaboral.value
+  void cambiarListaEducacionFormal(List item) {                   // Con este metodo cambiaListaEducacionFormal tomamos la lista listaformacionAcademica como parametro o argumento
+    _listaEducacionFormal.value = item;                          // List item es la lista de datos que recibe y contiene la lista listaformacionAcademica
+  }                                                             // Luego se le asigna el valor de item (que es la lista de listaformacionAcademica ) a _listaExperienciaLaboral.value
 
-  void removeItemListaEducacionFormal(int index) {      // Recibe un entero index
-    _listaEducacionFormal.removeAt(index);                 // Esta list tiene un metodo llamdo remove para que remove nos remueve un elemento. 
+  void removeItemListaEducacionFormal(int index) {           // Recibe un entero index
+    _listaEducacionFormal.removeAt(index);                  // Esta list tiene un metodo llamdo remove para que remove nos remueve un elemento. 
   }                                                        // Borramos el elemento de esa posicion, recordemos que una lista reactiva en el momento que los removamos tambien se remueve de la aprte grafica.
 
   void editItemListaEducacionFormal(int index, Map itemEdit) {
@@ -62,13 +63,31 @@ class Mycontroller extends GetxController {
   }                                                                // Borramos el elemento de esa posicion, recordemos que una lista reactiva en el momento que los removamos tambien se remueve de la aprte grafica.
   
   void editItemListaFormacionContinuada(int index, Map itemEdit) {
-     _listaFormacionContinuada[index] = itemEdit;                   // La lista lista en esa posicion (index) que me estan enviando le asignamos ese nuevo elemento (itemEdit)
+     _listaFormacionContinuada[index] = itemEdit;                       // La lista lista en esa posicion (index) que me estan enviando le asignamos ese nuevo elemento (itemEdit)
+  }
+
+  // Metodos Publicaciones 
+  void addItemListaPublicaciones(Map<String,dynamic> item) {               // Los items son un mapa completo dentro de nuestra lista.
+    _listaPublicaciones.add(item);                                        // En esta funcion le estamos enviando un map y ese mapa lo vamos a agregar a la lista recortando que tenemos una lista de mapas.
+  }                                                                      // Este metodo es ára agregar los nuevos valores a la lista ListaEducacionFormal
+
+  void cambiarListaPublicaciones(List item) {                           // Con este metodo cambiaListaEducacionFormal tomamos la lista listaformacionAcademica como parametro o argumento
+    _listaPublicaciones.value = item;                                  // List item es la lista de datos que recibe y contiene la lista listaformacionAcademica
+  }                                                                   // Luego se le asigna el valor de item (que es la lista de listaformacionAcademica ) a _listaExperienciaLaboral.value
+
+  void removeItemListaPublicaciones(int index) {                     // Recibe un entero index
+    _listaPublicaciones.removeAt(index);                            // Esta list tiene un metodo llamdo remove para que remove nos remueve un elemento. 
+  }                                                                // Borramos el elemento de esa posicion, recordemos que una lista reactiva en el momento que los removamos tambien se remueve de la aprte grafica.
+  
+  void editItemListaPublicaciones(int index, Map itemEdit) {
+     _listaPublicaciones[index] = itemEdit;                       // La lista lista en esa posicion (index) que me estan enviando le asignamos ese nuevo elemento (itemEdit)
   }
 
 
   String get Titulo => _titulo.value; 
-  List get ListaExperienciaLaboral => _listaExperienciaLaboral.value;        // Aqui se iguala o transforma _listaEducacionFormal a ListaEducacionFormal    
-  List get ListaEducacionFormal => _listaEducacionFormal.value; 
-  List get ListaFormacionContinuada => _listaFormacionContinuada.value;                                                                                                                                                                                                          
+  List get ListaExperienciaLaboral  => _listaExperienciaLaboral.value;        // Aqui se iguala o transforma _listaEducacionFormal a ListaEducacionFormal    
+  List get ListaEducacionFormal     => _listaEducacionFormal.value; 
+  List get ListaFormacionContinuada => _listaFormacionContinuada.value;    
+  List get ListaPublicaciones       => _listaPublicaciones.value;                                                                                                                                                                                                       
   
 }

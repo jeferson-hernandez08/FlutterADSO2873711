@@ -1,8 +1,9 @@
 import 'package:curriculum_vitae_v1_adso/educacionFormal/principalEducacionFormal.dart';
 import 'package:curriculum_vitae_v1_adso/experienciaLaboral/principalExperienciaLaboral.dart';
 import 'package:curriculum_vitae_v1_adso/formacionContinuada/principalFormacionContinuada.dart';
-import 'package:curriculum_vitae_v1_adso/main.dart';
 import 'package:curriculum_vitae_v1_adso/perfilPersonal/perfilPersonal.dart';
+import 'package:curriculum_vitae_v1_adso/publicaciones/principalPublicaciones.dart';
+import 'package:curriculum_vitae_v1_adso/main.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../utils/utils.dart';
@@ -105,6 +106,7 @@ class _HomePrincipalState extends State<HomePrincipal> {
               onTap: () {
                 miControlador.cambiarTitulo("Publicaciones"); // Estamos llamando al metodo cambiar titulo
                 Navigator.pop(context);
+                Get.to(PrincipalPublicaciones());   // Para llamar el metodo recordemos que debemos importar la carpeta hacia donde está este metodo. (import 'package:curriculum_vitae_v1_adso/publicaciones/principalPublicaciones.dart';)
               },
             ),
             ListTile(
