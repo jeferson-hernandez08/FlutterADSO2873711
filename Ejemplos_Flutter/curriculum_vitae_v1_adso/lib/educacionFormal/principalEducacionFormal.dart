@@ -1,9 +1,12 @@
+
 import 'package:curriculum_vitae_v1_adso/educacionFormal/viewEducacionFormal.dart';
+import 'package:curriculum_vitae_v1_adso/educacionFormal/addEditEducacionFormal.dart';
 import 'package:curriculum_vitae_v1_adso/main.dart';    // Import Package de miControlador.
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';   // Import Package de Obx.
-
 import '../utils/utils.dart';  // Import Package de Utils.
+
 
 class PrincipalEducacionFormal extends StatefulWidget {
   const PrincipalEducacionFormal({super.key});
@@ -26,9 +29,9 @@ class _PrincipalEducacionFormalState extends State<PrincipalEducacionFormal> {
         foregroundColor: Utils.foregroundColor,
         child: Icon(Icons.add),
         onPressed: (){
-          // Lógica para agregar una experiencia
-          //**showModalAddEditExperiencia(context, "new", null, null);    // El contexto es toda la organizacion del arbol de widget de manera gerarquica
-                                                         // Donde podemos visualizar cada uno de los elementos que tenemos. 
+          // Lógica para agregar una Educacion Formal
+          showModalAddEditEducacionFormal(context, "new", null, null);    // El contexto es toda la organizacion del arbol de widget de manera gerarquica
+                                                                 // Donde podemos visualizar cada uno de los elementos que tenemos. 
       }),
       body: ListView.builder(      // Este elemento es un ciclo que nos permite listar todos los elementos a ttarves de tarjeta. 
         itemCount: miControlador.ListaExperienciaLaboral.length,  
@@ -50,19 +53,19 @@ class _PrincipalEducacionFormalState extends State<PrincipalEducacionFormal> {
                         icon: Icon(Icons.search)),
                       IconButton(onPressed: (){
                         // Lógica para editar una experiencia laboral
-                        //**showModalAddEditExperiencia(context, "edit", miControlador.ListaExperienciaLaboral[index], index);
+                        showModalAddEditEducacionFormal(context, "edit", miControlador.ListaEducacionFormal[index], index);
                       } , icon: Icon(Icons.edit)),
                       IconButton(
                         onPressed: (){
                           // Lógica para eliminar un elemento de una experecia laboral.
                           Get.defaultDialog(
                             title: "Atención",
-                            middleText: "Esta seguro en eliminar el registro con la experiencia como ${miControlador.ListaExperienciaLaboral[index]["titulo"]}",
+                            middleText: "Esta seguro en eliminar el registro con la educación formal como ${miControlador.ListaEducacionFormal[index]["titulo"]}",
                             onCancel: (){
                               // Si da click en cancelar no nos hace nada
                             },
                             onConfirm: (){
-                              miControlador.removeItemListaExpericienciaLaboral(index);    // Hacemos que en el momento que presionemos removeritem le mandamos cmo parametro la lista en la posicion index.
+                              miControlador.removeItemListaEducacionFormal(index);    // Hacemos que en el momento que presionemos removeritem le mandamos cmo parametro la lista en la posicion index.
                               Get.back();   
                             }
                           );
@@ -75,10 +78,5 @@ class _PrincipalEducacionFormalState extends State<PrincipalEducacionFormal> {
         },
       ),
     ));
-    
-
-
-
-
   }
 }

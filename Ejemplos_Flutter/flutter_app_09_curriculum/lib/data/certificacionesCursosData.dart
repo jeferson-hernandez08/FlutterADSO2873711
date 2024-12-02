@@ -164,6 +164,6 @@ List<Map<String, dynamic>> estudiosYCursosLista = [
   ];
 
   // Consulta ChatGPT para la realizacion de la lista:
-  // Crea un list map de 20 elementos en Dart para registrar los estudios y cursos realizados por un desarrollador
+  //  Crea un list map de 20 elementos en Dart para registrar los estudios y cursos realizados por un desarrollador
   //  que contenga id, titulo, anioRealizacion, categoría, colorCategoria (clase Colors de Dart) que es un color 
   //  según la categoría, descripción (de 1 parrafo).

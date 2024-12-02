@@ -1,11 +1,11 @@
 import 'package:curriculum_vitae_v1_adso/data/experienciaData.dart';
 import 'package:curriculum_vitae_v1_adso/experienciaLaboral/viewExperienciaLaboral.dart';
+import 'addEditExperienciaLaboral.dart';
 import 'package:curriculum_vitae_v1_adso/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import '../utils/utils.dart';
-import 'addEditExperienciaLaboral.dart';
 
 class PrincipalExperienciaLaboral extends StatefulWidget {
   const PrincipalExperienciaLaboral({super.key});

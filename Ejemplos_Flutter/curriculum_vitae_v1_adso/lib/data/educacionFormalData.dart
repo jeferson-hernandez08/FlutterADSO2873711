@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-List<Map<String, dynamic>> listaformacionAcademica = [
+List<Map<String, dynamic>> listaFormacionAcademica = [
   {
     'id': 1,
     'titulo': 'Ingeniería en Sistemas',

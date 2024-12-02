@@ -79,8 +79,7 @@ if (opcionAddEdit == "edit") {
             Get.snackbar("Atencion", "Experiencia editada con éxito",    // Mostrar mensaje
                 backgroundColor: Colors.green[300],
                 colorText: Colors.white
-            );
-            
+            );     
           }
       }),
       body: Padding(

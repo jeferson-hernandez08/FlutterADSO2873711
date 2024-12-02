@@ -37,12 +37,6 @@ viewEducacionFormal(BuildContext context, Map elementoActual) {       // Recibe 
               title: Text(elementoActual["institucion"]),    
               subtitle: Text("Institución"),
             ),
-            // ListTile(
-            //   iconColor: elementoActual["color"],
-            //   leading: Icon(Icons.work),
-            //   title: Text(elementoActual["funciones"]) ,
-            //   subtitle: Text("Funciones"),
-            // ),
           ],
         ),
       );
