@@ -1,5 +1,6 @@
 import 'package:curriculum_vitae_v1_adso/educacionFormal/principalEducacionFormal.dart';
 import 'package:curriculum_vitae_v1_adso/experienciaLaboral/principalExperienciaLaboral.dart';
+import 'package:curriculum_vitae_v1_adso/formacionContinuada/principalFormacionContinuada.dart';
 import 'package:curriculum_vitae_v1_adso/main.dart';
 import 'package:curriculum_vitae_v1_adso/perfilPersonal/perfilPersonal.dart';
 import 'package:flutter/material.dart';
@@ -88,12 +89,13 @@ class _HomePrincipalState extends State<HomePrincipal> {
               onTap: () {
                 miControlador.cambiarTitulo("Educación continuada");
                 Navigator.pop(context);
-                Get.snackbar(
-                  "Atención!", "Esta sección aún no está disponible",
-                  backgroundColor: Colors.red[300],
-                  colorText: Colors.white,
-                  icon: Icon(Icons.dangerous)
-                );
+                // Get.snackbar(
+                //   "Atención!", "Esta sección aún no está disponible",
+                //   backgroundColor: Colors.red[300],
+                //   colorText: Colors.white,
+                //   icon: Icon(Icons.dangerous)
+                // );
+                Get.to(PrincipalFormacionContinuada());   // Para llamar el metodo recordemos que debemos importar la carpeta hacia donde está este metodo. (import 'package:curriculum_vitae_v1_adso/formacionContinuada/principalFormacionContinuada.dart';)
               },
             ),
             ListTile(

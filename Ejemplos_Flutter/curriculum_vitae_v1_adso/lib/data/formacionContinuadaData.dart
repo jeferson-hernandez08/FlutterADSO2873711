@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-List<Map<String, dynamic>> cursos = [
+List<Map<String, dynamic>> listaFormacionContinuada = [
   {
     'id': 1,
     'titulo': 'Introducción a Flutter',
