@@ -162,3 +162,8 @@ List<Map<String, dynamic>> listaFormacionContinuada = [
     'descripcion': 'Curso sobre el uso de Selenium para la automatización de pruebas en aplicaciones web, mejorando la eficiencia del proceso de pruebas.'
   }
 ];
+
+// Consulta ChatGPT:
+// Crea un list map de 20 elementos en Dart para registrar los cursos realizados o formación continuada 
+// por un desarrollador  que contenga id, titulo, anioRealizacion, categoría, colorCategoria (clase Colors
+// de Dart) que es un color según la categoría, descripción (de 1 parrafo).

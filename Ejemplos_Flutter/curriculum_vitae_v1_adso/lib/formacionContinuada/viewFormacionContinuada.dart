@@ -1,3 +1,4 @@
+import 'package:curriculum_vitae_v1_adso/experienciaLaboral/addEditExperienciaLaboral.dart';
 import 'package:flutter/material.dart';
 import '../utils/utils.dart';
 
@@ -7,7 +8,7 @@ viewFormacionContinuada(BuildContext context, Map elementoActual) {   // Recibe 
   builder: (context){
     return Scaffold(
       appBar: AppBar(
-        title: Text("Visualizar formación continuada"),
+        title: Text("Visualizar Formación Continuada"),
         backgroundColor: Utils.primaryColor,
         foregroundColor: Utils.foregroundColor,
       ),
@@ -21,27 +22,21 @@ viewFormacionContinuada(BuildContext context, Map elementoActual) {   // Recibe 
           ),
           ListTile(
             iconColor: elementoActual["colorCategoria"],
-            leading: Icon(Icons.group_work),
+            leading: Icon(Icons.code),
             title: Text(elementoActual["titulo"]),
-            subtitle: Text("Cargo"),
+            subtitle: Text("Título Curso"),
           ),
           ListTile(
             iconColor: elementoActual["colorCategoria"],
             leading: Icon(Icons.work_history),
-            title: Text(elementoActual["fechaInicio"]),    
-            subtitle: Text("Fecha Inicio"),
+            title: Text(elementoActual["anioRealizacion"]),    
+            subtitle: Text("Año Realización"),
           ),
           ListTile(
             iconColor: elementoActual["colorCategoria"],
-            leading: Icon(Icons.work_history_outlined),
-            title: Text(elementoActual["fechaFin"]),    
-            subtitle: Text("Fecha Fin"),
-          ),
-          ListTile(
-            iconColor: elementoActual["colorCategoria"],
-            leading: Icon(Icons.work),
-            title: Text(elementoActual["funciones"]) ,
-            subtitle: Text("Funciones"),
+            leading: Icon(Icons.description),
+            title: Text(elementoActual["descripcion"]) ,
+            subtitle: Text("Descripción"),
           ),
         ],
       ),

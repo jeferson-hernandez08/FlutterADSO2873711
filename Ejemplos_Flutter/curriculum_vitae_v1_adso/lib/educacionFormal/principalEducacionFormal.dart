@@ -1,12 +1,11 @@
-
-import 'package:curriculum_vitae_v1_adso/educacionFormal/viewEducacionFormal.dart';
+import 'package:curriculum_vitae_v1_adso/data/experienciaData.dart';
 import 'package:curriculum_vitae_v1_adso/educacionFormal/addEditEducacionFormal.dart';
-import 'package:curriculum_vitae_v1_adso/main.dart';    // Import Package de miControlador.
+import 'package:curriculum_vitae_v1_adso/educacionFormal/viewEducacionFormal.dart';
+import 'package:curriculum_vitae_v1_adso/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:get/get.dart';   // Import Package de Obx.
-import '../utils/utils.dart';  // Import Package de Utils.
-
+import 'package:get/get.dart';
+import '../utils/utils.dart';
 
 class PrincipalEducacionFormal extends StatefulWidget {
   const PrincipalEducacionFormal({super.key});
@@ -29,18 +28,18 @@ class _PrincipalEducacionFormalState extends State<PrincipalEducacionFormal> {
         foregroundColor: Utils.foregroundColor,
         child: Icon(Icons.add),
         onPressed: (){
-          // Lógica para agregar una Educacion Formal
+          // Lógica para agregar una experiencia
           showModalAddEditEducacionFormal(context, "new", null, null);    // El contexto es toda la organizacion del arbol de widget de manera gerarquica
-                                                                 // Donde podemos visualizar cada uno de los elementos que tenemos. 
+                                                         // Donde podemos visualizar cada uno de los elementos que tenemos. 
       }),
       body: ListView.builder(      // Este elemento es un ciclo que nos permite listar todos los elementos a ttarves de tarjeta. 
-        itemCount: miControlador.ListaExperienciaLaboral.length,  
+        itemCount: miControlador.ListaEducacionFormal.length,  
         itemBuilder:(BuildContext context, int index) {
           return Card(
             child: ListTile(
-              title: Text(miControlador.ListaEducacionFormal[index]["titulo"]),            // Lista donde tenemos los diferentes elementos.
-              subtitle: Text(miControlador.ListaEducacionFormal[index]["tipoEstudio"]),   // Accedemos a la lista educacion formal en la posicion index
-              leading: Text(miControlador.ListaEducacionFormal[index]["anioFinalizacion"]),  // ****AQUI QUEDE YA ESTOY CONSUMIENDO LOS DATOS EN EL MENU****
+              title: Text(miControlador.ListaEducacionFormal[index]["titulo"]),         // Lista donde tenemos los diferentes elementos.
+              subtitle: Text(miControlador.ListaEducacionFormal[index]["tipoEstudio"]),  // Accedemos a la lista experiencia laboral en la posicion index
+              leading: Text(miControlador.ListaEducacionFormal[index]["anioFinalizacion"]),
               trailing: 
                   Row(
                     mainAxisSize: MainAxisSize.min,
@@ -48,7 +47,7 @@ class _PrincipalEducacionFormalState extends State<PrincipalEducacionFormal> {
                       IconButton(
                         onPressed: (){
                         // Lógica para visualizar el detalle de una experiencia laboral.
-                         viewEducacionFormal(context, miControlador.ListaEducacionFormal[index]);  // Le mandamos el context y recordemos que el context representa el arbol de widget de toda la aplicacion y le mandamos la ListaEducacionFormal
+                          viewEducacionFormal(context, miControlador.ListaEducacionFormal[index]);  // Le mandamos el context y recordemos que el context representa el arbol de widget de toda la aplicacion 
                         } , 
                         icon: Icon(Icons.search)),
                       IconButton(onPressed: (){
@@ -57,7 +56,7 @@ class _PrincipalEducacionFormalState extends State<PrincipalEducacionFormal> {
                       } , icon: Icon(Icons.edit)),
                       IconButton(
                         onPressed: (){
-                          // Lógica para eliminar un elemento de una experecia laboral.
+                          // Lógica para eliminar un elemento de una educacion formal.
                           Get.defaultDialog(
                             title: "Atención",
                             middleText: "Esta seguro en eliminar el registro con la educación formal como ${miControlador.ListaEducacionFormal[index]["titulo"]}",

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../utils/utils.dart';
 
+// Declaracion de variables
 final TextEditingController idController = TextEditingController();
 final TextEditingController tituloController = TextEditingController();
 final TextEditingController anioRealizacionController = TextEditingController();
@@ -23,7 +24,7 @@ if (opcionAddEdit == "edit") {
   tituloController.text = elementoActual["titulo"];
   anioRealizacionController.text = elementoActual["anioRealizacion"];
   categoriaController.text = elementoActual["categoria"];
-  descripcionController.text = elementoActual["descripcion"];    
+  descripcionController.text = elementoActual["descripcion"];      
 }
 
   showModalBottomSheet(                 // Con la funcion showModalBottomSheet y aqui abriremos un Scaffold
@@ -32,7 +33,7 @@ if (opcionAddEdit == "edit") {
     builder: (context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(opcionAddEdit=="new"?"Ingresar Experiencia":"Editar experiencia"),  // Si la opcionAddEdit es igual a "new" mostramos el texto "Ingresar experiencia" si NO ponemos el texto "Editar experiencia"
+        title: Text(opcionAddEdit=="new"?"Ingresar Formación Continuada":"Editar Formación Continuada"),  // Si la opcionAddEdit es igual a "new" mostramos el texto "Ingresar experiencia" si NO ponemos el texto "Editar experiencia"
         backgroundColor: Utils.primaryColor,
         foregroundColor: Utils.foregroundColor,
       ),
@@ -44,7 +45,7 @@ if (opcionAddEdit == "edit") {
           // Se ejecuta cuando se guarda un elemento de experiencia
           if (opcionAddEdit == "new") {
             Map<String,dynamic> newItem = {
-              // 'id': 10,
+              // 'id': 01,
               'titulo': tituloController.text,
               'anioRealizacion': anioRealizacionController.text,
               'categoria': categoriaController.text,
@@ -54,7 +55,7 @@ if (opcionAddEdit == "edit") {
             miControlador.addItemListaFormacionContinuada(newItem);  // Llamamos la funcion addItemListaExperienciaLaboral de myController
             Get.back();           // Cerrar
             limpiarCampos();     // Llamamos al metodo limpiarCampos para limpiar los campos.
-            Get.snackbar("Atencion", "Formación Continuada agregada con éxito",    // Mostrar mensaje
+            Get.snackbar("Atencion", "Formación continuada agregada con éxito",    // Mostrar mensaje
                 backgroundColor: Colors.green[300],
                 colorText: Colors.white
             );
@@ -71,7 +72,7 @@ if (opcionAddEdit == "edit") {
             miControlador.editItemListaFormacionContinuada(index, elementEdit);
             Get.back();           // Cerrar
             limpiarCampos();     // Llamamos al metodo limpiarCampos para limpiar los campos.
-            Get.snackbar("Atencion", "Experiencia editada con éxito",    // Mostrar mensaje
+            Get.snackbar("Atencion", "Formación continuada editada con éxito",    // Mostrar mensaje
                 backgroundColor: Colors.green[300],
                 colorText: Colors.white
             );     
@@ -85,28 +86,28 @@ if (opcionAddEdit == "edit") {
               controller: tituloController,   // Asignamos el controlador.
               decoration: InputDecoration(
                 labelText: "Título",
-                hintText: "Ingrese título de la experiencia"
+                hintText: "Ingrese título de la formacion continuada"
               ),
             ),
             TextFormField(
               controller: anioRealizacionController,   // Asignamos el controlador.
               decoration: InputDecoration(
-                labelText: "Año Realizacion",
-                hintText: "Ingrese el año de realización de la formación"
+                labelText: "Año Realización",
+                hintText: "Ingrese año realización de la formación continuada"
               ),
             ),
             TextFormField(
               controller: categoriaController,   // Asignamos el controlador.
               decoration: InputDecoration(
-                labelText: "Categoria",
-                hintText: "Ingrese la categoria de la formación"
+                labelText: "Categoría",
+                hintText: "Ingrese categoria de la formación continuada"
               ),
             ),
             TextFormField(
               controller: descripcionController,   // Asignamos el controlador.
               decoration: InputDecoration(
                 labelText: "Descripción",
-                hintText: "Ingrese decripción de la formación continuada"
+                hintText: "Ingrese la descripción de la formación continuada"
               ),
             ),
             // ElevatedButton(onPressed: () {

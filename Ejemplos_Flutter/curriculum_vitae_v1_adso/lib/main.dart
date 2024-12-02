@@ -1,8 +1,9 @@
+import 'package:curriculum_vitae_v1_adso/data/educacionFormalData.dart';
 import 'package:flutter/material.dart';
 import 'package:curriculum_vitae_v1_adso/controllers/myController.dart';
 import 'data/experienciaData.dart';
 import 'package:curriculum_vitae_v1_adso/data/formacionContinuadaData.dart';
-import 'data/educacionFormalData.dart';
+
 import 'interfaz/principal.dart';
 import 'package:get/get.dart';
 

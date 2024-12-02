@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../utils/utils.dart';
 
-// Definicón de variables
+// Declaracion de variables
 final TextEditingController idController = TextEditingController();
 final TextEditingController tituloController = TextEditingController();
 final TextEditingController anioFinalizacionController = TextEditingController();
@@ -21,7 +21,7 @@ showModalAddEditEducacionFormal(context, String opcionAddEdit, dynamic elementoA
 
 limpiarCampos();
 if (opcionAddEdit == "edit") {
-  tituloController.text = elementoActual["titulo"];         // List educación data
+  tituloController.text = elementoActual["titulo"];
   anioFinalizacionController.text = elementoActual["anioFinalizacion"];
   tipoEstudioController.text = elementoActual["tipoEstudio"];
   institucionController.text = elementoActual["institucion"];      
@@ -42,17 +42,17 @@ if (opcionAddEdit == "edit") {
         foregroundColor: Utils.foregroundColor,
         child: opcionAddEdit=="new"?Icon(Icons.save):Icon(Icons.edit),
         onPressed: () {
-          // Se ejecuta cuando se guarda un elemento de educacion formal
+          // Se ejecuta cuando se guarda un elemento de la educacion formal
           if (opcionAddEdit == "new") {
-            Map<String,dynamic> newItem = {      //****SI ME ESTA FUNCIONANDO EL IF **** */
-              // 'id': 1,
+            Map<String,dynamic> newItem = {
+              // 'id': 10,
               'titulo': tituloController.text,
               'anioFinalizacion' : anioFinalizacionController.text,
-              'tipoEstudio' : tipoEstudioController.text,
+              'tipoEstudio': tipoEstudioController.text,
               'institucion': institucionController.text,
-              'color': Colors.blue, // Azul para Pregrado
+              'color': Colors.blue,  // Azul para Tipo de Estudio
             };
-            miControlador.addItemListaEducacionFormal(newItem);  // Llamamos la funcion addItemListaEducacionFormal de myController
+            miControlador.addItemListaEducacionFormal(newItem);  // Llamamos la funcion addItemListaExperienciaLaboral de myController
             Get.back();           // Cerrar
             limpiarCampos();     // Llamamos al metodo limpiarCampos para limpiar los campos.
             Get.snackbar("Atencion", "Educación Formal agregada con éxito",    // Mostrar mensaje
@@ -60,14 +60,14 @@ if (opcionAddEdit == "edit") {
                 colorText: Colors.white
             );
           } else {
-            // Lógica para editar un registro de experiencia
+            // Lógica para editar un registro de educacion formal
             // Basicamente creamos un nuevo mapa con clave String('titulo', etc.) y valores dynamico(tituloController.text, etc.)
-            Map<String,dynamic> elementEdit =  {    // Gerneramos un elemento que se va a editar que es de tipo map lo ucal lo mandamos en el  miControlador.addItemListaEducacionFormal
+            Map<String,dynamic> elementEdit =  {    // Gereramos un elemento que se va a editar que es de tipo map lo ucal lo mandamos en el  miControlador.editItemListaEducacionFormal
               'titulo': tituloController.text,
               'anioFinalizacion' : anioFinalizacionController.text,
-              'tipoEstudio' : tipoEstudioController.text,
+              'tipoEstudio': tipoEstudioController.text,
               'institucion': institucionController.text,
-              'color': Colors.blue, // Azul para Pregrado
+              'color': Colors.blue,  // Azul para Tipo de Estudio
             };
             miControlador.editItemListaEducacionFormal(index, elementEdit);
             Get.back();           // Cerrar
@@ -75,7 +75,7 @@ if (opcionAddEdit == "edit") {
             Get.snackbar("Atencion", "Educación Formal editada con éxito",    // Mostrar mensaje
                 backgroundColor: Colors.green[300],
                 colorText: Colors.white
-            );
+            );     
           }
       }),
       body: Padding(
@@ -86,28 +86,28 @@ if (opcionAddEdit == "edit") {
               controller: tituloController,   // Asignamos el controlador.
               decoration: InputDecoration(
                 labelText: "Título",
-                hintText: "Ingrese título de la carrrera realizada"
+                hintText: "Ingrese título de la educacion formal"
               ),
             ),
             TextFormField(
               controller: anioFinalizacionController,   // Asignamos el controlador.
               decoration: InputDecoration(
-                labelText: "Año finalización",
-                hintText: "Ingrese el año de finalización de la educación formal"
+                labelText: "Año Finalización",
+                hintText: "Ingrese año finalización de la educación formal"
               ),
             ),
             TextFormField(
               controller: tipoEstudioController,   // Asignamos el controlador.
               decoration: InputDecoration(
                 labelText: "Tipo Estudio",
-                hintText: "Ingrese el tipo de estudio de la educación formal"  
+                hintText: "Ingrese tipo de estudio de la educación formal"
               ),
             ),
             TextFormField(
               controller: institucionController,   // Asignamos el controlador.
               decoration: InputDecoration(
-                labelText: "Institución",
-                hintText: "Ingrese la instituión de la educación formal realizada"
+                labelText: "Intitución",
+                hintText: "Ingrese la institución cursada de la educación formal"
               ),
             ),
             // ElevatedButton(onPressed: () {
