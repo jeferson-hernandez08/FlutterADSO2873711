@@ -1,8 +1,9 @@
 import 'package:curriculum_vitae_v1_adso/educacionFormal/principalEducacionFormal.dart';
 import 'package:curriculum_vitae_v1_adso/experienciaLaboral/principalExperienciaLaboral.dart';
 import 'package:curriculum_vitae_v1_adso/formacionContinuada/principalFormacionContinuada.dart';
-import 'package:curriculum_vitae_v1_adso/perfilPersonal/perfilPersonal.dart';
 import 'package:curriculum_vitae_v1_adso/publicaciones/principalPublicaciones.dart';
+import 'package:curriculum_vitae_v1_adso/perfilPersonal/perfilPersonal.dart';
+import 'package:curriculum_vitae_v1_adso/referencias/referencias.dart';
 import 'package:curriculum_vitae_v1_adso/main.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -126,6 +127,7 @@ class _HomePrincipalState extends State<HomePrincipal> {
               onTap: () {
                 miControlador.cambiarTitulo("Referencias");
                 Navigator.pop(context);
+                Get.to(Referencias());
               },
             ),
             ListTile(
