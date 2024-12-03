@@ -183,10 +183,22 @@ class _MenuState extends State<Menu> {
                                 experienciaLaboralLista[index]["categoria"],
                                 style: TextStyle(color: experienciaLaboralLista[index]["colorCategoria"]),
                               ),
-                              leading: Text(
-                                experienciaLaboralLista[index]["fechaInicio"].toString(),
-                                //experienciaLaboralLista[index]["fechaInicio"]["fechaFin"].toString(),
-                                // Consultar con el profe como poner otro elemento
+                              leading: Padding(   
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(   // Solucion para poner dos elementos.
+                                  children: [
+                                    Text(
+                                      experienciaLaboralLista[index]["fechaInicio"].toString(),
+                                      //experienciaLaboralLista[index]["fechaInicio"]["fechaFin"].toString(),
+                                      // Consultar con el profe como poner otro elemento
+                                    ),
+                                    Text(
+                                      experienciaLaboralLista[index]["fechaFin"].toString(),
+                                      //experienciaLaboralLista[index]["fechaInicio"]["fechaFin"].toString(),
+                                      // Consultar con el profe como poner otro elemento
+                                    ),
+                                  ],
+                                ),
                               ),
                               trailing: Icon(experienciaLaboralLista[index]["iconoCategoria"]),
                             );
