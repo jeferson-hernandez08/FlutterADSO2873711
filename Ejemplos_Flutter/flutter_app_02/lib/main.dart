@@ -17,3 +17,16 @@ class Principal extends StatelessWidget {  //Se herada una clase que hereda de S
     );
   }
 }
+
+/*
+  Nota Inicialización de flutter: 
+  1. Para iniciar un nuevo proyecto en flutter damos:
+    - CTRL + SHIFT + P.
+    - Luego Flutter: New Proyect
+    - Application
+    - Luego nos paramos en la carpeta donde queremos que se guarde nuestro proyecto dentro de esa carpeta.
+    - Luego Select a folder to create
+    - Finalmente damos el nombre de nuestro proyecto y enter.
+  2. Para correr el proyecto damos F5
+
+*/
